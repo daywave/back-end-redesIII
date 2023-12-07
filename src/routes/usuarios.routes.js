@@ -7,6 +7,6 @@ router.use(bodyParser.json());
 
 router.get('/usuarios', usuariosController.getUsuarios);
 router.post('/intereses', usuariosController.buscarPorIntereses);
-router.post('/sexo', usuariosController.mostrarPorSexo); 
+router.post('/sexo', usuariosController.mostrarPorGenero); 
 
 module.exports = router;
