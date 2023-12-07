@@ -37,23 +37,23 @@ async function buscarPorIntereses(req, res) {
 
 async function mostrarPorGenero(req, res) {
     try {
-        const genBuscado = req.body.genero;
+        const generoBuscado = req.body.genero;
 
-        if (!genBuscado) {
-            return res.status(400).send('El genero es requerido.');
+        if (!generoBuscado) {
+            return res.status(400).send('El campo "genero" es requerido.');
         }
 
         const data = await nfsService.readNFSFile('/home/minato/public/shared-kakashi-cliente', 'usuarios.json');
         const usuarios = JSON.parse(data);
 
         const usuariosPorGenero = usuarios.usuarios.filter(usuario =>
-            usuario.genero.toLowerCase() === genBuscado.toLowerCase()
+            usuario.genero.toLowerCase() === generoBuscado.toLowerCase()
         );
 
         res.json(usuariosPorGenero);
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error al buscar usuarios por sexo');
+        res.status(500).send('Error al buscar usuarios por genero');
     }
 }
 
