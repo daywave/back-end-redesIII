@@ -3,7 +3,7 @@ const nfsService = require('../services/nfsService');
 
 async function getUsuarios(req, res) {
     try {
-        const data = await nfsService.readNFSFile('/home/minato/public/shared-kakashi-cliente', 'usuarios');
+        const data = await nfsService.readNFSFile('/home/minato/public/shared-kakashi-cliente', 'usuarios.json');
         res.send(data);
     } catch (error) {
         res.status(500).send(error.message);

@@ -12,5 +12,5 @@ app.use(usuariosRoutes);
 
 
 app.listen(port, '10.10.10.70', () => {
-    console.log('Servidor NodeJs funciona en http://10.10.10.70:${port}');
+    console.log(`Servidor NodeJs funciona en http://10.10.10.70:${port}`);
 })
