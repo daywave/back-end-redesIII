@@ -12,6 +12,14 @@ async function readNFSFile(server, file) {
     }
 }
 
+async function buscarPorIntereses(cadenaIntereses) {
+    // Supongamos que tienes un modelo de usuarios donde cada usuario tiene un campo 'intereses'
+    // Aquí deberías realizar la lógica específica para tu aplicación
+
+    const usuarios = await usuariosModel.find({ intereses: { $in: cadenaIntereses } }).exec();
+
+    return usuarios;
+}
 module.exports = {
     readNFSFile,
     // Otros métodos del servicio si es necesario...
