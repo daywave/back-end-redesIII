@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const usuariosController = require('../controllers/usuariosController');
+const usuariosController = require('../controllers/usuarios.controller');
 
 router.use(bodyParser.json());
 
