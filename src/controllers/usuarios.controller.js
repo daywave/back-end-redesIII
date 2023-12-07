@@ -57,9 +57,28 @@ async function mostrarPorGenero(req, res) {
     }
 }
 
+async function crearNuevoUsuario(req, res) {
+    try {
+        const nuevoUsuario = req.body;
+
+        if (!nuevoUsuario) {
+            return res.status(400).send('La información del nuevo usuario es requerida.');
+        }
+
+        // Llamamos a la función para crear el usuario
+        const usuarioCreado = await crearUsuario(nuevoUsuario);
+
+        res.json(usuarioCreado);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al crear un nuevo usuario');
+    }
+}
+
 module.exports = {
     getUsuarios,
     buscarPorIntereses,
-    mostrarPorGenero
+    mostrarPorGenero,
+    crearNuevoUsuario
     // Otros métodos del controlador si es necesario...
 };
